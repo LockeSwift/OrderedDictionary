@@ -19,6 +19,6 @@
 Example:
  [objc_getClass("__NSDictionaryM") swizzlingMethod:@selector(setObject:forKey:) swizzledSelector:@selector(swizzled_setObject:forKey:)];
  */
-- (void)swizzlingMethod:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector;
+- (void)swizzlingInstanceMethod:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector;
 
 @end

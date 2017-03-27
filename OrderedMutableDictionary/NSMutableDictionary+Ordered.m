@@ -18,10 +18,10 @@ static BOOL isHasBeenRemoved;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         @autoreleasepool {
-            [objc_getClass("__NSDictionaryM") swizzlingMethod:@selector(setObject:forKey:) swizzledSelector:@selector(swizzled_setObject:forKey:)];
-            [objc_getClass("__NSDictionaryM") swizzlingMethod:@selector(removeObjectForKey:) swizzledSelector:@selector(swizzled_removeObjectForKey:)];
-            [objc_getClass("__NSDictionaryM") swizzlingMethod:@selector(removeAllObjects) swizzledSelector:@selector(swizzled_removeAllObjects)];
-            [objc_getClass("__NSDictionaryM") swizzlingMethod:@selector(removeObjectsForKeys:) swizzledSelector:@selector(swizzled_removeObjectsForKeys:)];
+            [objc_getClass("__NSDictionaryM") swizzlingInstanceMethod:@selector(setObject:forKey:) swizzledSelector:@selector(swizzled_setObject:forKey:)];
+            [objc_getClass("__NSDictionaryM") swizzlingInstanceMethod:@selector(removeObjectForKey:) swizzledSelector:@selector(swizzled_removeObjectForKey:)];
+            [objc_getClass("__NSDictionaryM") swizzlingInstanceMethod:@selector(removeAllObjects) swizzledSelector:@selector(swizzled_removeAllObjects)];
+            [objc_getClass("__NSDictionaryM") swizzlingInstanceMethod:@selector(removeObjectsForKeys:) swizzledSelector:@selector(swizzled_removeObjectsForKeys:)];
         }
     });
 }
